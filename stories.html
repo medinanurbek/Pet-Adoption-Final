@@ -21,15 +21,16 @@
       <span>Pet adoption</span>
     </div>
 
-    <!-- Навигация -->
+  
     <nav class="nav-menu">
       <a href="index.html">Home</a>
       <a href="adopt.html">Adopt</a>
       <a href="HowToAdopt.html">How to Adopt</a>
       <a href="stories.html">Stories</a>
+       <a href="Log-in.html" class="login-btn">Login</a>
     </nav>
 
-    <!-- Правая часть: бургер и тема -->
+
     <div class="header-right">
       <button id="menuToggle" class="menu-toggle">☰</button>
       <button id="themeToggle" class="theme-btn">🌙 Night</button>
@@ -232,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
   });
 
-  // Закрывать меню при клике на ссылку
   document.querySelectorAll(".nav-menu a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");

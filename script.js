@@ -25,7 +25,7 @@ $(document).ready(function() {
   }
 });
 
-// === Initial animation for all images ===
+
 $(".gallery-item").each(function (i) {
   $(this).delay(i * 100).queue(function (next) {
     $(this).addClass("show");
@@ -35,7 +35,6 @@ $(".gallery-item").each(function (i) {
 });
 
 
-// === AUTOCOMPLETE SEARCH SUGGESTIONS ===
 $(document).ready(function() {
   const availableTypes = ["cat", "dog", "rabbit", "parrot", "hamster", "bird"];
   const $input = $("#searchInput");
@@ -50,7 +49,7 @@ $(document).ready(function() {
       return;
     }
 
-    // фильтруем по совпадениям
+
     const filtered = availableTypes.filter(type => type.includes(value));
     if (filtered.length > 0) {
       filtered.forEach(item => {
@@ -62,15 +61,15 @@ $(document).ready(function() {
     }
   });
 
-  // при клике на подсказку — вставляем в input
+
   $suggestions.on("click", "li", function() {
     const text = $(this).text();
     $input.val(text);
     $suggestions.hide();
-    $input.trigger("keyup"); // запустить фильтр галереи
+    $input.trigger("keyup"); 
   });
 
-  // скрывать при клике вне
+
   $(document).on("click", function(e) {
     if (!$(e.target).closest(".search-box-container").length) {
       $suggestions.hide();
@@ -78,7 +77,6 @@ $(document).ready(function() {
   });
 });
 
-// === FIXED SEARCH HIGHLIGHTING (safe version) ===
 $(document).ready(function() {
   const $input = $("#searchInput");
 
@@ -95,7 +93,7 @@ $(document).ready(function() {
         const newText = this.nodeValue.replace(regex, '<span class="highlighted">$1</span>');
         $(this).replaceWith(newText);
       } else {
-        highlightText($(this), keyword); // рекурсивно для вложенных
+        highlightText($(this), keyword); 
       }
     });
   }
@@ -106,14 +104,14 @@ $(document).ready(function() {
 
     if (keyword.length < 2) return;
 
-    // Подсвечиваем только текстовые блоки (исключаем <img> и т.п.)
+
     $(".features, .card-row, .faq, .adopt-form, .rating-section").each(function() {
       highlightText($(this), keyword);
     });
   });
 });
 
-// === COLORFUL SCROLL PROGRESS BAR ===
+
 $(window).on("scroll", function() {
   const scrollTop = $(window).scrollTop();
   const docHeight = $(document).height() - $(window).height();
@@ -121,10 +119,10 @@ $(window).on("scroll", function() {
   $("#scrollProgress").css("width", scrollPercent + "%");
 });
 
-// === ANIMATED NUMBER COUNTER ===
+
 $(document).ready(function() {
   const counters = $(".counter");
-  let started = false; // чтобы не запускалось несколько раз
+  let started = false; 
 
   $(window).on("scroll", function() {
     const triggerPoint = $(".stats-section").offset().top - window.innerHeight + 150;
@@ -193,20 +191,20 @@ $(document).ready(function() {
 
 
 
-// === COPY TO CLIPBOARD BUTTON ===
+
 $(document).ready(function() {
   $("#copyBtn").on("click", function() {
     const textToCopy = $("#copyText").text();
     const $btn = $(this);
 
-    // создаём временный элемент для копирования
+    
     const temp = $("<textarea>");
     $("body").append(temp);
     temp.val(textToCopy).select();
     document.execCommand("copy");
     temp.remove();
 
-    // меняем вид кнопки
+
     $btn.addClass("copied").text("✅ Copied!");
     showNotification("Text copied to clipboard!", "success");
 
@@ -217,3 +215,17 @@ $(document).ready(function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const headerRight = document.querySelector(".header-right");
+  const loggedIn = localStorage.getItem("loggedIn");
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (loggedIn === "true" && user) {
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = `👋 ${user.name}`;
+    nameSpan.style.fontWeight = "600";
+    headerRight.prepend(nameSpan);
+    const loginBtn = headerRight.querySelector(".login-btn");
+    if (loginBtn) loginBtn.remove();
+  }
+});

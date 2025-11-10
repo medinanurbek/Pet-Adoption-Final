@@ -13,7 +13,7 @@ document.getElementById('adoptForm').addEventListener('submit', function(event) 
   errorBox.innerHTML = "";
   nameField.style.border = emailField.style.border = petField.style.border = messageField.style.border = '';
 
-  // === Validation ===
+ 
   if (!nameField.value.trim()) {
     isValid = false;
     errorMessage += "Name is required.<br>";
@@ -39,17 +39,17 @@ document.getElementById('adoptForm').addEventListener('submit', function(event) 
     messageField.style.border = '2px solid red';  
   }
 
-  // === If validation fails ===
+ 
   if (!isValid) {
     errorBox.innerHTML = errorMessage;
     showNotification("❌ Please correct the highlighted fields.", "error");
-    return; // прерываем выполнение
+    return; 
   }
 
-  // === If validation passes ===
+  
   showNotification("✅ Form submitted successfully!", "success");
 
-  // (по желанию можно очистить форму)
+
   nameField.value = "";
   emailField.value = "";
   petField.value = "";

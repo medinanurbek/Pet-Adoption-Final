@@ -30,6 +30,8 @@
       <a href="adopt.html">Adopt</a>
       <a href="HowToAdopt.html">How to Adopt</a>
       <a href="stories.html">Stories</a>
+      <a href="Log-in.html" class="login-btn">Login</a>
+
     </nav>
 
     <div class="header-right">
@@ -121,7 +123,6 @@
   </div>
 </section>
 
-<!-- === RANDOM ANIMAL API SECTION === -->
 <section class="api-section">
   <h2>Meet Random Pets 🐾</h2>
 
@@ -254,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
   });
 
-  // Закрывать меню при клике на ссылку
+  
   document.querySelectorAll(".nav-menu a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
@@ -263,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// === RANDOM DOG API ===
+
 async function getDog() {
   const res = await fetch("https://dog.ceo/api/breeds/image/random");
   const data = await res.json();
@@ -273,7 +274,7 @@ async function getDog() {
   `;
 }
 
-// === RANDOM CAT API ===
+
 async function getCat() {
   const res = await fetch("https://api.thecatapi.com/v1/images/search");
   const data = await res.json();

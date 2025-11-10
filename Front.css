@@ -95,7 +95,7 @@ header {
 }
 
 .highlight {
-  background-color: #ff9a3b;
+  background-color: #e68622;
   display: inline-block;
   padding: 0 6px;
   line-height: 1.2;
@@ -105,7 +105,7 @@ header {
 }
 
 .cta-btn {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
   font-weight: 700;
   font-size: 18px;
@@ -193,7 +193,7 @@ header {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #c45f00;          
+  color: #e68622;          
 }
 
 .feature p {
@@ -231,7 +231,7 @@ nav a {
   font-weight: 600;
 }
 nav a:hover {
-  color: #c45f00;
+  color: #e68622;
 }
 
 
@@ -273,11 +273,10 @@ nav a:hover {
 
 
 
-/* Footer */
 .footer{border-top:var(--border);padding:24px 0;margin-top:40px;color:var(--muted)}
 .foot-grid{display:flex;justify-content:space-between;align-items:center}
 
-/* Responsive */
+
 @media(max-width:900px){
   .hero{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
@@ -319,7 +318,7 @@ nav a:hover {
 .adopt-form select:focus,
 .adopt-form textarea:focus {
   outline: none;
-  border-color: #ff9a3b;
+  border-color: #e68622;
   box-shadow: 0 0 6px rgba(255,154,59,0.5);
 }
 
@@ -443,7 +442,7 @@ nav a:hover {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #c45f00;
+  color: #e68622;
 }
 
 .card-row .card p {
@@ -495,7 +494,7 @@ nav a:hover {
 }
 
 .accordion-header:hover {
-  background-color: #ff7a0b;
+  background-color: #e68622;
 }
 
 .accordion-content {
@@ -545,7 +544,7 @@ nav a:hover {
 }
 
 .cta-btn {
-  background-color: #ff9a3b;
+  background-color: #e68622;
   color: white;
   padding: 10px 20px;
   font-weight: bold;
@@ -555,7 +554,7 @@ nav a:hover {
 }
 
 .cta-btn:hover {
-  background-color: #ff7a0b;
+  background-color: #e68622;
 }
 
 form input, form button {
@@ -569,7 +568,7 @@ form input, form button {
 
 form input:focus, form button:focus {
   outline: none;
-  border-color: #ff9a3b;
+  border-color: #e68622;
 }
 
 
@@ -577,7 +576,7 @@ form input:focus, form button:focus {
   text-align: center;
   background: #fff8f0;
   padding: 60px 20px;
-  border-top: 3px solid #ff9a3b;
+  border-top: 3px solid #e68622;
   margin-top: 60px;
 }
 
@@ -622,7 +621,7 @@ form input:focus, form button:focus {
 
 .star:active {
   transform: scale(1.3);
-  filter: drop-shadow(0 0 10px #ff9a3b);
+  filter: drop-shadow(0 0 10px #e68622);
 }
 
 .theme-btn {
@@ -638,7 +637,7 @@ form input:focus, form button:focus {
 
 .theme-btn:hover {
   transform: scale(1.05);
-  background: #ff7a0b;
+  background: #e68622;
 }
 
 body.dark {
@@ -717,17 +716,17 @@ body.dark nav a {
 
 body.dark nav a:hover,
 body.dark nav a.active {
-  color: #ff9a3b; }                
+  color: #e68622; }                
 
 
 body.dark .theme-btn {
-  border-color: #ff9a3b;
+  border-color: #e68622;
   color: #ffffff;
   background: transparent;
 }
 
 body.dark .theme-btn:hover {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
 }
 
@@ -758,7 +757,7 @@ body.dark .accordion-header {
 }
 
 body.dark .accordion-header:hover {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
 }
 
@@ -812,18 +811,18 @@ body.dark .adopt-form select option {
 body.dark .adopt-form input:focus,
 body.dark .adopt-form select:focus,
 body.dark .adopt-form textarea:focus {
-  border-color: #ff9a3b;
+  border-color: #e68622;
   outline: none;
   box-shadow: 0 0 6px rgba(255, 154, 59, 0.5);
 }
 
 body.dark .cta-btn {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
 }
 
 body.dark .cta-btn:hover {
-  background: #ff7a0b;
+  background: #e68622;
   color: #fff;
 }
 
@@ -831,7 +830,7 @@ body.dark .cta-btn:hover {
 body.dark .rating-section {
   background: #1c1c1c;                /* общий фон */
   color: #f1f1f1;
-  border-top: 3px solid #ff9a3b;      /* сохраним фирменный акцент */
+  border-top: 3px solid #e68622;      /* сохраним фирменный акцент */
   transition: background 0.4s ease, color 0.4s ease;
 }
 
@@ -857,7 +856,7 @@ body.dark .star:hover {
 }
 
 body.dark .star.active {
-  color: #ff9a3b;                     /* выбранные звёзды */
+  color: #e68622;                     /* выбранные звёзды */
 }
 
 /* For stories read-more section */
@@ -895,7 +894,7 @@ body.dark .feature p {
 
 .gallery-grid img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #ff9a3b;
+  box-shadow: 0 0 10px #e68622;
 }
 
 /* 🌙 Тёмная тема */
@@ -903,7 +902,7 @@ body.dark .main-pet-display img {
   box-shadow: 0 4px 12px rgba(255,255,255,0.1);
 }
 body.dark .gallery-grid img:hover {
-  box-shadow: 0 0 12px #ffb347;
+  box-shadow: 0 0 12px #e68622;
 }
 
 /* === WELCOME SECTION === */
@@ -1001,7 +1000,7 @@ body.dark #factText {
   width: 320px;
   padding: 12px 18px;
   font-size: 16px;
-  border: 2px solid #ff9a3b;
+  border: 2px solid #e68622;
   border-radius: 8px;
   transition: all 0.3s ease;
   background: #fff;
@@ -1092,7 +1091,7 @@ body.dark .gallery-item span {
 body.dark #searchInput {
   background: #2b2b2b;
   color: #fff;
-  border: 2px solid #ff9a3b;
+  border: 2px solid #e68622;
 }
 
 body.dark .search-message {
@@ -1140,13 +1139,13 @@ body.dark .suggestions-list li {
 }
 
 body.dark .suggestions-list li:hover {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
 }
 
 /* === SEARCH HIGHLIGHT === */
 .highlighted {
-  background-color: #ff9a3b;
+  background-color: #e68622;
   color: #111;
   font-weight: 700;
   padding: 2px 4px;
@@ -1154,7 +1153,7 @@ body.dark .suggestions-list li:hover {
 }
 
 body.dark .highlighted {
-  background-color: #ffd580;
+  background-color: #d19213;
   color: #000;
 }
 
@@ -1166,7 +1165,7 @@ body.dark .highlighted {
   left: 0;
   height: 6px;
   width: 0;
-  background: linear-gradient(90deg, #ff9a3b, #ff7a0b, #ffce63);
+  background: linear-gradient(90deg, #ff9a3b, #e68622, #ffce63);
   z-index: 2000;
   transition: width 0.15s ease-out;
   border-radius: 0 3px 3px 0;
@@ -1174,7 +1173,7 @@ body.dark .highlighted {
 
 /* 🌙 Dark theme */
 body.dark #scrollProgress {
-  background: linear-gradient(90deg, #ffd580, #ffb347, #ffa94d);
+  background: linear-gradient(90deg, #ffd580, #e68622, #ffa94d);
 }
 
 /* === ANIMATED NUMBER COUNTER === */
@@ -1182,7 +1181,7 @@ body.dark #scrollProgress {
   text-align: center;
   padding: 80px 20px;
   background: #fff8f0;
-  border-top: 3px solid #ff9a3b;
+  border-top: 3px solid #e68622;
 }
 
 .stats-section h2 {
@@ -1222,7 +1221,7 @@ body.dark #scrollProgress {
 body.dark .stats-section {
   background: #1c1c1c;
   color: #f1f1f1;
-  border-top: 3px solid #ff9a3b;
+  border-top: 3px solid #e68622;
 }
 
 body.dark .counter {
@@ -1307,11 +1306,11 @@ body.dark .notification {
   text-align: center;
   padding: 60px 20px;
   background: #fff8f0;
-  border-top: 3px solid #ff9a3b;
+  border-top: 3px solid #e68622;
 }
 
 .copy-btn {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
   border: none;
   border-radius: 8px;
@@ -1324,7 +1323,7 @@ body.dark .notification {
 
 .copy-btn:hover {
   transform: scale(1.05);
-  background: #ff7a0b;
+  background: #e68622;
 }
 
 .copy-btn.copied {
@@ -1366,7 +1365,7 @@ body.dark .card-row .card p {
 }
 
 body.dark .card-row .cta-btn {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
 }
 
@@ -1379,7 +1378,7 @@ body.dark .card-row .cta-btn:hover {
 body.dark .stats-section {
   background: #1a1a1a;
   color: #f1f1f1;
-  border-top: 3px solid #ff9a3b;
+  border-top: 3px solid #e68622;
 }
 
 body.dark .stats-section h2 {
@@ -1400,7 +1399,7 @@ body.dark .counter {
 
 
 a:focus-visible, button:focus-visible, .cta-btn:focus-visible {
-  outline: 3px solid #ff9a3b;
+  outline: 3px solid #e68622;
   outline-offset: 2px;
 }
 
@@ -1449,7 +1448,7 @@ header {
   transition: color 0.3s ease;
 }
 .nav-menu a:hover {
-  color: #ff9a3b;
+  color: #e68622;
 }
 
 /* RIGHT SIDE */
@@ -1480,7 +1479,7 @@ header {
   transition: background 0.3s ease;
 }
 .theme-btn:hover {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
 }
 
@@ -1535,7 +1534,7 @@ body.dark .nav-menu a {
   color: #f1f1f1;
 }
 body.dark .nav-menu a:hover {
-  color: #ff9a3b;
+  color: #e68622;
 }
 body.dark .menu-toggle,
 body.dark .theme-btn {
@@ -1578,7 +1577,7 @@ body.dark .theme-btn {
 
 .card h3 {
   margin: 15px 0 8px;
-  color: #ff9a3b;
+  color: #e68622;
 }
 
 .card p {
@@ -1589,7 +1588,7 @@ body.dark .theme-btn {
 }
 
 .card .cta-btn {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
   font-weight: 600;
   border: none;
@@ -1652,7 +1651,7 @@ body.dark .api-section {
 }
 
 .api-buttons button {
-  background: #ff9a3b;
+  background: #e68622;
   color: #111;
   border: none;
   border-radius: 10px;
@@ -1679,3 +1678,24 @@ body.dark .api-section {
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
+.login-btn {
+  background: #e68622;
+  color: #111;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.login-btn:hover {
+  background: #e68622;
+  color: #fff;
+}
+body.dark .login-btn {
+  background: #ffb347;
+  color: #111;
+}
+body.dark .login-btn:hover {
+  background: #ff9a3b;
+}
+
