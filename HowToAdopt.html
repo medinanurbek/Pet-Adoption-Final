@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Adopt - Pet Adoption</title>
+  <link rel="stylesheet" href="Front.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js" defer></script>
+  <script src="Front.js" defer></script>
+</head>
+<body>
+<div id="scrollProgress"></div>
+
+<header id="header">
+  <div class="header-content">
+    <div class="logo">
+      <img src="images/pet-owner.png" class="logo-img" alt="logo">
+      <span>Pet adoption</span>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="HowToAdopt.html">How to Adopt</a>
+      <a href="stories.html">Stories</a>
+    </nav>
+
+    <!-- Правая часть: бургер и тема -->
+    <div class="header-right">
+      <button id="menuToggle" class="menu-toggle">☰</button>
+      <button id="themeToggle" class="theme-btn">🌙 Night</button>
+    </div>
+  </div>
+</header>
+
+
+
+<section class="hero">
+  <img src="https://i.pinimg.com/1200x/c7/11/d2/c711d285c07a05f6cc425675fb53a2b5.jpg" alt="Adopt hero" class="hero-bg">
+  <div class="hero-overlay-bg"></div>
+  <div class="hero-content">
+    <h1>
+      <span class="highlight">How to Adopt</span><br>
+      Step-by-step adoption guide 🐾
+    </h1>
+  </div>
+</section>
+
+
+<main class="grid-layout">
+  <aside class="sidebar">
+    <h3>Requirements Checklist</h3>
+    <ul class="checklist">
+      <li><input type="checkbox" id="age"><label for="age">18+ years old</label></li>
+      <li><input type="checkbox" id="id"><label for="id">Valid ID / Passport</label></li>
+      <li><input type="checkbox" id="address"><label for="address">Proof of address</label></li>
+      <li><input type="checkbox" id="landlord"><label for="landlord">Landlord approval (if renting)</label></li>
+    </ul>
+  </aside>
+
+<section class="main-content">
+ <h2>The Steps</h2>
+    <div class="steps">
+      <div class="step"><h3>1. Browse pets</h3><p>Find your ideal pet on our Adopt page.</p></div>
+      <div class="step"><h3>2. Submit application</h3><p>Fill out a form so we can match you with the right companion.</p></div>
+      <div class="step"><h3>3. Meet & greet</h3><p>Schedule a visit at the shelter or online.</p></div>
+      <div class="step"><h3>4. Home check</h3><p>Ensure your home is safe and cozy for the pet.</p></div>
+      <div class="step"><h3>5. Adopt & love</h3><p>Sign agreement, pay fee (if any), and welcome your pet!</p></div>
+    </div>
+
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="accordion">
+    <div class="accordion-item">
+        <button class="accordion-header">What is Pet Adoption?</button>
+        <div class="accordion-content">
+         <p>Pet adoption is the process of taking a pet from a shelter or rescue center and providing it with a permanent home.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">Why should I adopt a pet?</button>
+        <div class="accordion-content">
+            <p>Adopting a pet gives them a second chance and provides you with a loyal companion.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">How do I adopt a pet?</button>
+        <div class="accordion-content">
+            <p>You can browse available pets on our website, fill out an adoption application, and schedule a visit.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">What is the adoption process?</button>
+        <div class="accordion-content">
+            <p>The adoption process includes browsing pets, submitting an application, meeting the pet, and completing the adoption paperwork.</p>
+          </div>
+    </div>
+</div>
+</section>
+
+    <h2>Adoption Application Form</h2>
+    <form class="adopt-form" id="adoptForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+
+      <label for="pet">Pet You Want to Adopt:</label>
+      <select id="pet" name="pet">
+        <option value="">-- Select a Pet --</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="rabbit">Rabbit</option>
+        <option value="parrot">Parrot</option>
+      </select>
+
+      <label for="message">Why do you want to adopt?</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+
+      <button type="submit" class="cta-btn">Submit Application</button>
+      <div id="error-message" style="color: red;"></div>
+    </form>
+
+</section>
+</main>
+
+
+<div id="popupForm" class="popup-form">
+  <div class="popup-content">
+    <span id="closePopupBtn" class="close-btn">&times;</span>
+    <h2>Subscribe to Our Newsletter</h2>
+    <form id="subscribeForm">
+      <label for="popup-name">Your Name:</label>
+      <input type="text" id="popup-name" name="name" placeholder="Enter your name" required>
+
+      <label for="popup-email">Your Email:</label>
+      <input type="email" id="popup-email" name="email" placeholder="Enter your email" required>
+
+      <button type="submit" class="cta-btn">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<section class="copy-section">
+  <h2>📋 Copy to Clipboard Example</h2>
+  <p id="copyText">Adopt. Rescue. Love.</p>
+  <button id="copyBtn" class="copy-btn">Copy</button>
+</section>
+
+
+<footer>
+  <p>© 2025 Pet Adoption Project by Medina & Bekarys | Adopt. Rescue. Love.</p>
+  <div id="dateTimeBlock" style="font-size: 15px; font-weight: bold; text-align: center; margin-top: 30px;"></div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️ Day";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+
+    toggleBtn.textContent = isDark ? "☀️ Day" : "🌙 Night";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+});
+
+// === COPY TO CLIPBOARD BUTTON ===
+$(document).ready(function() {
+  $("#copyBtn").on("click", function() {
+    const textToCopy = $("#copyText").text();
+    const $btn = $(this);
+
+    // создаём временный элемент для копирования
+    const temp = $("<textarea>");
+    $("body").append(temp);
+    temp.val(textToCopy).select();
+    document.execCommand("copy");
+    temp.remove();
+
+    // меняем вид кнопки
+    $btn.addClass("copied").text("✅ Copied!");
+    showNotification("Text copied to clipboard!", "success");
+
+    setTimeout(() => {
+      $btn.removeClass("copied").text("Copy");
+    }, 2000);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
+  });
+
+  // Закрывать меню при клике на ссылку
+  document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      menuToggle.textContent = "☰";
+    });
+  });
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Stories - Pet Adoption</title>
+  <link rel="stylesheet" href="Front.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div id="scrollProgress"></div>
+  
+<header id="header">
+  <div class="header-content">
+    <div class="logo">
+      <img src="images/pet-owner.png" class="logo-img" alt="logo">
+      <span>Pet adoption</span>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="HowToAdopt.html">How to Adopt</a>
+      <a href="stories.html">Stories</a>
+    </nav>
+
+    <!-- Правая часть: бургер и тема -->
+    <div class="header-right">
+      <button id="menuToggle" class="menu-toggle">☰</button>
+      <button id="themeToggle" class="theme-btn">🌙 Night</button>
+    </div>
+  </div>
+</header>
+
+
+<section class="hero">
+  <img src="images/pet owner hero.jpg" alt="Happy pets" class="hero-bg">
+  <div class="hero-overlay-bg"></div>
+  <div class="hero-content">
+    <h1>
+      <span class="highlight">Success Stories</span><br>
+      Happy pets in their forever homes 🐾
+    </h1>
+  </div>
+</section>
+
+<section class="features">
+  <h2>Real Adoption Stories</h2>
+  <p class="features-subtitle">Meet the families who gave these pets a second chance ❤️</p>
+  <div class="features-grid">
+
+  <div class="feature">
+    <img src="images/Gigi owner.jpg" alt="Gigi adopt" class="feature-img">
+    <h3>Gigi’s New Home</h3>
+    <p id="gigiShort">
+      Gigi the cat found a loving home. She enjoys naps in the sun and endless cuddles 🐱☀️.
+    </p>
+    <p id="gigiFull" style="display: none;">
+      Once a timid kitten rescued from a cold street, Gigi now lives in a cozy apartment filled with plants and sunlight.  
+      Every morning she waits by the window for her owner, Mia, to wake up. Together they read, nap, and share breakfast.  
+      Gigi’s favorite thing? Curling up on Mia’s laptop right when she’s working — because love can’t wait ❤️.
+    </p>
+    <button id="gigiBtn" class="cta-btn">Read more</button>
+  </div>
+
+
+  <div class="feature">
+    <img src="images/Rex owner.jpg" alt="Rex adopted" class="feature-img">
+    <h3>Rex the Protector</h3>
+    <p id="rexShort">
+      Rex was adopted by a family with kids. Now he is their loyal guardian and playmate 🐶👨‍👩‍👧‍👦.
+    </p>
+    <p id="rexFull" style="display: none;">
+      When Rex arrived at the shelter, he was shy and cautious — a gentle soul who had seen too many lonely nights.  
+      Little Emma from the Miller family ran straight to him, and his eyes lit up.  
+      Now he guards their home, walks the kids to the bus, and comforts Emma when it storms.  
+      He’s no longer a stray — he’s their hero, their protector, and their best friend 🐾❤️.
+    </p>
+    <button id="rexBtn" class="cta-btn">Read more</button>
+  </div>
+
+  
+  <div class="feature">
+    <img src="images/rabbit owner.jpg" alt="Dina adopted" class="feature-img">
+    <h3>Dina the Rabbit</h3>
+    <p id="dinaShort">
+      Dina found a cozy home with Mike. She hops around the garden and loves carrots 🥕🐇.
+    </p>
+    <p id="dinaFull" style="display: none;">
+      Mike found Dina trembling under a bench one rainy night. Now, she has her own little wooden house in his garden.  
+      Every morning, Dina greets Mike with a happy hop, waiting for her breakfast — two crunchy carrots and a gentle pat.  
+      Her once-lonely life is now full of love and warmth 🌷🐰.
+    </p>
+    <button id="dinaBtn" class="cta-btn">Read more</button>
+  </div>
+
+ 
+  <div class="feature">
+    <img src="images/parrot owner.jpg" alt="Rico adopted" class="feature-img">
+    <h3>Rico the Talker</h3>
+    <p id="ricoShort">
+      Rico the parrot now lives with a young lady. Every morning he says “Good morning!” 🦜☀️.
+    </p>
+    <p id="ricoFull" style="display: none;">
+      Rico used to be a quiet bird who rarely spoke. But when Sofia adopted him, her laughter filled his days.  
+      Within weeks, he learned to mimic her cheerful “Good morning!” and even “I love you.”  
+      Now, every dawn, Rico greets the sun — and Sofia — with bright eyes and brighter words 🌞🦜.
+    </p>
+    <button id="ricoBtn" class="cta-btn">Read more</button>
+  </div>
+
+</div>
+
+</section>
+
+<section class="rating-section">
+  <h2>🐾 Have you used our adoption services?</h2>
+  <p class="rating-subtitle">Rate your experience and help us make it even better!</p>
+
+  <div class="stars">
+    <span class="star" data-value="1">★</span>
+    <span class="star" data-value="2">★</span>
+    <span class="star" data-value="3">★</span>
+    <span class="star" data-value="4">★</span>
+    <span class="star" data-value="5">★</span>
+  </div>
+
+  <p id="ratingMessage">Click a star to rate ⭐</p>
+</section>
+
+
+
+<footer>
+  <p>© 2025 Pet Adoption Project by Medina & Bekarys | Adopt. Rescue. Love.</p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const stars = document.querySelectorAll(".star");
+  const msg = document.getElementById("ratingMessage");
+  let selected = 0;
+
+  if (stars.length > 0) {
+    stars.forEach(star => {
+      star.addEventListener("click", () => {
+        selected = parseInt(star.dataset.value);
+        stars.forEach((s, i) => {
+          s.style.color = i < selected ? "#ff9a3b" : "#ccc";
+        });
+
+      
+        switch (selected) {
+          case 1:
+            msg.textContent = "😿 We're sorry to hear that...";
+            msg.style.color = "#d9534f";
+            break;
+          case 2:
+            msg.textContent = "😕 We'll try to improve!";
+            msg.style.color = "#f0ad4e";
+            break;
+          case 3:
+            msg.textContent = "😺 Thanks for your feedback!";
+            msg.style.color = "#f7c04a";
+            break;
+          case 4:
+            msg.textContent = "🐶 Great! We're glad you liked it!";
+            msg.style.color = "#5cb85c";
+            break;
+          case 5:
+            msg.textContent = "🐾 Thank you! You made our day!";
+            msg.style.color = "#3cba54";
+            break;
+        }
+      });
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️ Day";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+
+    toggleBtn.textContent = isDark ? "☀️ Day" : "🌙 Night";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const stories = [
+    { btn: "gigiBtn", full: "gigiFull" },
+    { btn: "rexBtn", full: "rexFull" },
+    { btn: "dinaBtn", full: "dinaFull" },
+    { btn: "ricoBtn", full: "ricoFull" }
+  ];
+
+  stories.forEach(story => {
+    const btn = document.getElementById(story.btn);
+    const fullText = document.getElementById(story.full);
+
+    if (btn && fullText) {
+      btn.addEventListener("click", () => {
+        const isHidden = fullText.style.display === "none" || fullText.style.display === "";
+        fullText.style.display = isHidden ? "block" : "none";
+        btn.textContent = isHidden ? "Read less" : "Read more";
+      });
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
+  });
+
+  // Закрывать меню при клике на ссылку
+  document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      menuToggle.textContent = "☰";
+    });
+  });
+});
+
+</script>
+
+</body>
+</html>

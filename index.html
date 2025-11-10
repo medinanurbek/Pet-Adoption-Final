@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Pet adoption </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Front.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div id="scrollProgress"></div>
+
+<header id="header">
+  <div class="header-content">
+    <div class="logo">
+      <img src="images/pet-owner.png" class="logo-img" alt="logo">
+      <span>Pet adoption</span>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="HowToAdopt.html">How to Adopt</a>
+      <a href="stories.html">Stories</a>
+    </nav>
+
+    <div class="header-right">
+      <button id="menuToggle" class="menu-toggle">☰</button>
+      <button id="themeToggle" class="theme-btn">🌙 Night</button>
+    </div>
+  </div>
+</header>
+
+
+<section class="hero">
+  <img src="images/Main cats img.jpg" alt="Cats" class="hero-bg">
+  <div class="hero-overlay-bg"></div>
+  <div class="hero-content">
+    <h1>
+      Find your new best friend<br><span class="highlight">Pet adoption</span><br>
+      <br>
+    </h1>
+  </div>
+</section>
+
+<section class="welcome-section">
+  <h2 id="greeting">Welcome to Pet Adoption 🐾</h2>
+
+  <p class="welcome-subtitle">
+    Enter your name to get a personal greeting:
+  </p>
+
+  <input 
+    type="text" 
+    id="nameInput" 
+    placeholder="Type your name here..." 
+    class="name-input"
+  >
+</section>
+
+<section class="fact-section">
+  <h2>💡 Pet Fun Facts</h2>
+  <p id="factText">
+    Click the button below to learn something new about our furry friends 🐕🐈
+  </p>
+  <button id="factBtn" class="cta-btn">Show Random Fact</button>
+</section>
+
+<section class="card-row">
+  <div class="card">
+    <img data-src="images/Cat Ariel.jpg" alt="Cat" class="lazy">
+    <h3>Adopt a Cat</h3>
+    <p>Find your perfect feline friend 🐱 - playful, curious, and loving.</p>
+    <button class="cta-btn" onclick="window.location.href='adopt.html'">Adopt Now</button>
+  </div>
+
+  <div class="card">
+    <img data-src="images/dog dedces.jpg" alt="Dog" class="lazy">
+    <h3>Adopt a Dog</h3>
+    <p>Loyal and friendly 🐶 - perfect companions for your family.</p>
+    <button class="cta-btn" onclick="window.location.href='adopt.html'">Adopt Now</button>
+  </div>
+
+  <div class="card">
+    <img data-src="images/rabbit.jpg" alt="Rabbit" class="lazy">
+    <h3>Adopt a Rabbit</h3>
+    <p>Soft and gentle 🐇 - great pets for peaceful households.</p>
+    <button class="cta-btn" onclick="window.location.href='adopt.html'">Adopt Now</button>
+  </div>
+</section>
+
+<section class="features container py-5">
+  <h2 class="mb-3 text-center">Site Sections</h2>
+  <div class="row g-3">
+    <div class="col-12 col-md-4">
+      <a href="adopt.html" class="feature d-block h-100">
+        <h3><span class="highlight">Adopt a Pet</span></h3>
+        <p>Browse cats, dogs, and other animals looking for a home.</p>
+      </a>
+    </div>
+    <div class="col-12 col-md-4">
+      <a href="HowToAdopt.html" class="feature d-block h-100">
+        <h3><span class="highlight">How to Adopt</span></h3>
+        <p>Step-by-step guide on the adoption process.</p>
+      </a>
+    </div>
+    <div class="col-12 col-md-4">
+      <a href="stories.html" class="feature d-block h-100">
+        <h3><span class="highlight">Success Stories</span></h3>
+        <p>Real stories of happy adoptions.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- === RANDOM ANIMAL API SECTION === -->
+<section class="api-section">
+  <h2>Meet Random Pets 🐾</h2>
+
+  <div class="api-buttons">
+    <button onclick="getDog()">Show Random Dog 🐶</button>
+    <button onclick="getCat()">Show Random Cat 🐱</button>
+  </div>
+
+  <div id="apiResult" class="api-result"></div>
+</section>
+
+
+
+<section class="stats-section">
+  <h2>🐾 Our Impact in Numbers</h2>
+  <div class="stats-grid">
+    <div class="stat">
+      <span class="counter" data-target="1240">0</span>
+      <p>Pets Adopted</p>
+    </div>
+    <div class="stat">
+      <span class="counter" data-target="350">0</span>
+      <p>Volunteers</p>
+    </div>
+    <div class="stat">
+      <span class="counter" data-target="98">0</span>
+      <p>Success Stories</p>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2025 Pet Adoption Project by Medina & Bekarys.| Adopt. Rescue. Love.</p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️ Day";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+
+    toggleBtn.textContent = isDark ? "☀️ Day" : "🌙 Night";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const nameInput = document.getElementById("nameInput");
+  const greeting = document.getElementById("greeting");
+
+  if (!nameInput || !greeting) return;
+
+  nameInput.addEventListener("input", () => {
+    const name = nameInput.value.trim();
+
+    if (name) {
+      greeting.textContent = `Welcome, ${name}! 🐶 Ready to find your new friend?`;
+    } else {
+      greeting.textContent = "Welcome to Pet Adoption 🐾";
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const facts = [
+    "Cats sleep for about 70% of their lives — true relaxation experts 😴🐱.",
+    "Dogs can learn more than 1000 words and gestures — some are smarter than toddlers 🐶🧠.",
+    "Rabbits purr when they’re happy, just like cats! 🐇💖",
+    "Parrots can live for more than 50 years and remember their owners’ voices 🦜👂.",
+    "Adopting one animal can save two lives — the pet you take home and the one that gets its shelter spot 🏠🐾.",
+    "Dogs have an extraordinary sense of smell — up to 100,000 times stronger than ours 👃🐶.",
+    "When a cat slowly blinks at you, it’s their way of saying ‘I trust you’ 💞🐈.",
+    "A rabbit’s teeth never stop growing — that’s why they love to chew! 🥕😄"
+  ];
+
+  const factBtn = document.getElementById("factBtn");
+  const factText = document.getElementById("factText");
+
+  if (!factBtn || !factText) return;
+
+  factBtn.addEventListener("click", () => {
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    factText.style.opacity = "0";
+
+    setTimeout(() => {
+      factText.textContent = randomFact;
+      factText.style.opacity = "1";
+    }, 200);
+  });
+});
+
+$(document).ready(function() {
+  function lazyLoad() {
+    $(".lazy").each(function() {
+      const $img = $(this);
+      if ($img.attr("src")) return;
+      const imgTop = $img.offset().top;
+      const scrollTop = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      if (imgTop < scrollTop + windowHeight + 150) {
+        const src = $img.data("src");
+        $img.attr("src", src).hide().fadeIn(600).addClass("loaded");
+      }
+    });
+  }
+
+  $(window).on("scroll resize", lazyLoad);
+  lazyLoad();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
+  });
+
+  // Закрывать меню при клике на ссылку
+  document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      menuToggle.textContent = "☰";
+    });
+  });
+});
+
+// === RANDOM DOG API ===
+async function getDog() {
+  const res = await fetch("https://dog.ceo/api/breeds/image/random");
+  const data = await res.json();
+  document.getElementById("apiResult").innerHTML = `
+    <h3>Here's a random dog 🐶</h3>
+    <img src="${data.message}" alt="Dog" class="api-img">
+  `;
+}
+
+// === RANDOM CAT API ===
+async function getCat() {
+  const res = await fetch("https://api.thecatapi.com/v1/images/search");
+  const data = await res.json();
+  document.getElementById("apiResult").innerHTML = `
+    <h3>Here's a random cat 🐱</h3>
+    <img src="${data[0].url}" alt="Cat" class="api-img">
+  `;
+}
+
+
+</script>
+
+
+</body>
+</html>

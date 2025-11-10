@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adopt a Pet</title>
+  <link rel="stylesheet" href="Front.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div id="scrollProgress"></div>
+
+<header id="header">
+  <div class="header-content">
+    <div class="logo">
+      <img src="images/pet-owner.png" class="logo-img" alt="logo">
+      <span>Pet adoption</span>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="HowToAdopt.html">How to Adopt</a>
+      <a href="stories.html">Stories</a>
+    </nav>
+
+    <!-- Правая часть: бургер и тема -->
+    <div class="header-right">
+      <button id="menuToggle" class="menu-toggle">☰</button>
+      <button id="themeToggle" class="theme-btn">🌙 Night</button>
+    </div>
+  </div>
+</header>
+
+
+<section class="hero">
+  <img src="https://i.pinimg.com/1200x/c7/11/d2/c711d285c07a05f6cc425675fb53a2b5.jpg"  class="hero-bg">
+  <div class="hero-overlay-bg"></div>
+  <div class="hero-content">
+    <h1>
+      <span class="highlight">Adopt a Pet</span><br>
+      Find your new best friend today
+    </h1>
+  </div>
+</section>
+
+<section class="features">
+  <h2>Available Pets</h2>
+  <p class="features-subtitle">
+    Meet cats, dogs, and other animals waiting for a loving home ❤️
+  </p>
+
+  <!-- 🔍 Search Section -->
+  <div class="search-box-container">
+    <input 
+      type="text" 
+      id="searchInput"
+      placeholder="Type: cat, dog, rabbit..."
+      autocomplete="off"
+    >
+    <p id="searchMessage" class="search-message">Start typing to filter by animal type 🐾</p>
+  </div>
+
+  <ul id="suggestions" class="suggestions-list"></ul>
+
+ 
+  <div class="gallery-grid">
+    <div class="gallery-item" data-type="cat">
+      <img data-src="images/Cat Bella.jpg" alt="Cat Bella" class="lazy">
+      <span>Cat • Bella · 2 years old</span>
+    </div>
+
+    <div class="gallery-item" data-type="dog">
+      <img data-src="images/dog energetic.jpg" alt="Dog Max" class="lazy">
+      <span>Dog • Max · 3 years old</span>
+    </div>
+
+    <div class="gallery-item" data-type="cat">
+      <img data-src="images/Cat Luna.jpg" alt="Cat Luna" class="lazy">
+      <span>Cat • Luna · 1 year old</span>
+    </div>
+
+    <div class="gallery-item" data-type="dog">
+      <img data-src="images/dog 2.jpg" alt="Dog Rocky" class="lazy">
+      <span>Dog • Rocky · 4 years old</span>
+    </div>
+
+    <div class="gallery-item" data-type="rabbit">
+      <img data-src="images/rabbit.jpg" alt="Rabbit Daisy" class="lazy">
+      <span>Rabbit • Daisy · 6 months old</span>
+    </div>
+
+    <div class="gallery-item" data-type="parrot">
+      <img data-src="images/parrot.jpg" alt="Parrot Coco" class="lazy">
+      <span>Parrot • Coco · 2 years old</span>
+    </div>
+
+    <div class="gallery-item" data-type="dog">
+      <img data-src="images/dog Lily.jpg" alt="Dog Lily" class="lazy">
+      <span>Dog • Lily · 5 months old</span>
+    </div>
+
+    <div class="gallery-item" data-type="cat">
+      <img data-src="images/Cat Margarita.jpg" alt="Cat Muffin" class="lazy">
+      <span>Cat • Muffin · 1.5 years old</span>
+    </div>
+
+    <div class="gallery-item" data-type="cat">
+      <img data-src="images/Cat Ariel.jpg" alt="Cat Ariel" class="lazy">
+      <span>Cat • Ariel · 1 month old</span>
+    </div>
+
+    <div class="gallery-item" data-type="dog">
+      <img data-src="images/dog dedces.jpg" alt="Dog Dedsec" class="lazy">
+      <span>Dog • Dedsec · 5 years old</span>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer>
+  <p>© 2025 Pet Adoption Project by Medina & Bekarys.| Adopt. Rescue. Love.</p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️ Day";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+
+    toggleBtn.textContent = isDark ? "☀️ Day" : "🌙 Night";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+});
+
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const mainImage = document.getElementById("mainPetImage");
+  const galleryItems = document.querySelectorAll(".gallery-grid img");
+
+  if (!mainImage || !galleryItems.length) return;
+
+  galleryItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      mainImage.style.opacity = "0";
+
+      setTimeout(() => {
+        mainImage.src = item.src;
+        mainImage.alt = item.alt;
+        mainImage.style.opacity = "1";
+        mainImage.style.transform = "scale(1.05)";
+        setTimeout(() => (mainImage.style.transform = "scale(1)"), 200);
+      }, 200);
+    });
+  });
+});
+
+$(document).ready(function() {
+  function lazyLoad() {
+    $(".lazy").each(function() {
+      const $img = $(this);
+      if ($img.attr("src")) return;
+      const imgTop = $img.offset().top;
+      const scrollTop = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      if (imgTop < scrollTop + windowHeight + 150) {
+        const src = $img.data("src");
+        $img.attr("src", src).hide().fadeIn(600).addClass("loaded");
+      }
+    });
+  }
+
+  $(window).on("scroll resize", lazyLoad);
+  lazyLoad();
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
+  });
+
+  // Закрывать меню при клике на ссылку
+  document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      menuToggle.textContent = "☰";
+    });
+  });
+});
+
+</script>
+</body>
+</html>
